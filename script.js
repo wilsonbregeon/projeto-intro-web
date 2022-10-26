@@ -140,6 +140,42 @@
 
 //===========================================================================================================================================
 
+//SEMANA 06 
+
+function botaoBuscar() {
+  const selecaoEscolhida = document.getElementById("pesquisa").value
+  const selecaoArgentina = document.querySelector("#argentina")
+  const selecaoItaliana = document.querySelector("#italia")
+  const selecaoBrasileira = document.querySelector("#brasil")
+  
+  if(selecaoEscolhida === "Brasil"){
+    
+    selecaoArgentina.remove()
+    selecaoItaliana.remove()
+    
+  }else if(selecaoEscolhida === "Argentina") {
+    
+    selecaoBrasileira.remove()
+    selecaoItaliana.remove()
+
+
+  }else if(selecaoEscolhida === "Itália"){
+    
+    selecaoBrasileira.remove()
+    selecaoArgentina.remove()
+
+  }else{
+    alert("Seleção não encontrada!")
+  }
+  
+}
+
+
+
+
+
+
+
 
 
 
