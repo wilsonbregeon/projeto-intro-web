@@ -58,22 +58,22 @@
 //   arraySelecoes.push(selecaoBrasileira)
 //   console.log(arraySelecoes)
 // }else{
-  //alert("Seleção brasileira não adicionada, pois não jogou todas as Copas!")
-//}
+//   alert("Seleção brasileira não adicionada, pois não jogou todas as Copas!")
+// }
 
 // if(selecaoArgentina.jogouTodasCopas === true){
 //   arraySelecoes.push(selecaoArgentina)
 //   console.log(arraySelecoes)
 // }else{
-  //alert("Seleção argentina não adicionada, pois não jogou todas as Copas!")
-//}
+//   alert("Seleção argentina não adicionada, pois não jogou todas as Copas!")
+// }
 
 // if(selecaoItaliana.jogouTodasCopas === true){
 //   arraySelecoes.push(selecaoItaliana)
 //   console.log(arraySelecoes)
 // }else{
-  //alert("Seleção italiana não adicionada, pois não jogou todas as Copas!")
-//}
+//   alert("Seleção italiana não adicionada, pois não jogou todas as Copas!")
+// }
 
 //============================================================================================================================================
 
@@ -142,40 +142,60 @@
 
 //SEMANA 06 
 
+const arraySelecoes = [ 
+  {
+  selecao : "Brasil",
+  copaDoMundo : 5,
+  jogouTodasCopas : true,
+  copaGanha : [1958, 1962, 1970, 1994, 2002]
+},
+
+{
+  selecao : "Argentina",
+  copaDoMundo : 2,
+  jogouTodasCopas : false,
+  copaGanha : [1978, 1986]
+},
+
+{
+  selecao : "Itália",
+  copaDoMundo : 4,
+  jogouTodasCopas : false,
+  copaGanha : [1934, 1938, 1982, 2006]
+}
+]
+
 function botaoBuscar() {
-  const selecaoEscolhida = document.getElementById("pesquisa").value
+  const selecaoEscolhida = document.getElementById("barra-de-pesquisa").value
   const selecaoArgentina = document.querySelector("#argentina")
   const selecaoItaliana = document.querySelector("#italia")
   const selecaoBrasileira = document.querySelector("#brasil")
+  document.getElementById('barra-de-pesquisa').value = ''
   
   if(selecaoEscolhida === "Brasil"){
     
-    selecaoArgentina.remove()
-    selecaoItaliana.remove()
+    selecaoBrasileira.style.display='block'
+    selecaoArgentina.style.display='none'
+    selecaoItaliana.style.display='none'
+    console.log(`A seleção escolhida foi: ${arraySelecoes[0].selecao}; \nA seleção possui: ${arraySelecoes[0].copaDoMundo} Copas; \nJogou todas as Copas? ${arraySelecoes[0].jogouTodasCopas}; \nAno em que venceu a Copa: ${arraySelecoes[0].copaGanha}.`) 
     
   }else if(selecaoEscolhida === "Argentina") {
     
-    selecaoBrasileira.remove()
-    selecaoItaliana.remove()
-
+    selecaoBrasileira.style.display='none'
+    selecaoArgentina.style.display='block'
+    selecaoItaliana.style.display='none'
+    console.log(`A seleção escolhida foi: ${arraySelecoes[1].selecao}; \nA seleção possui: ${arraySelecoes[1].copaDoMundo} Copas; \nJogou todas as Copas? ${arraySelecoes[1].jogouTodasCopas}; \nAno em que venceu a Copa: ${arraySelecoes[1].copaGanha}.`) 
 
   }else if(selecaoEscolhida === "Itália"){
     
-    selecaoBrasileira.remove()
-    selecaoArgentina.remove()
+    selecaoBrasileira.style.display='none'
+    selecaoArgentina.style.display='none'
+    selecaoItaliana.style.display='block'
+    console.log(`A seleção escolhida foi: ${arraySelecoes[2].selecao}; \nA seleção possui: ${arraySelecoes[2].copaDoMundo} Copas; \nJogou todas as Copas? ${arraySelecoes[2].jogouTodasCopas}; \nAno em que venceu a Copa: ${arraySelecoes[2].copaGanha}.`) 
 
   }else{
     alert("Seleção não encontrada!")
+    console.clear()
   }
-  
+
 }
-
-
-
-
-
-
-
-
-
-
