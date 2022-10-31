@@ -5,31 +5,52 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h1, h2, p {
+    padding-top: 10px;
+}
+
+
 img {
-    width: 20vh;
-    height: 20vh;  
+    width: 25vh;
+    height: 25vh;  
 }
 
 header {
-    background-color: black;
+    background-color: rgb(72, 71, 71);
     color: white;
     height: 5vh;
 }
 
-#input {
+#barra-de-pesquisa {
+    background-image: url('imagens/lupa.png');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: 10%;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1px;
+    box-shadow: 0px 0px 3px 0px;
+}
+
+#div-input {
     background-color: rgb(163, 198, 229);
     text-align: center;
     padding: 20px;
+    zoom: 130%;
 }
 
-section {
-    border: 2px solid black;
-    width: 30vh;
-    height: 35vh;
-    margin: 6px;
-    background-color: white;
-    border-radius: 12px;
-    text-align: center;
+button {
+    border-radius: 3px;
+    border:  1px solid black ;
+    padding: 1px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+   background-color: rgb(186, 183, 183);
 }
 
 main {
@@ -38,27 +59,84 @@ main {
     align-items: center;
     justify-content: center;
     height: 90vh;
-}
+}   
 
 footer {
-    background-color: black;
+    background-color: rgb(72, 71, 71);
     color: white;
-    text-align: center;
     padding: 10px;
     height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+} 
+
+#logo-github, #logo-linkedin {
+    width: 4vh;
+    height: 4vh;
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    margin-left: 5px;
 }
 
-a:hover {
-    color: blue;
+#logo-github:hover, #logo-linkedin:hover {
+    background-color: rgb(184, 141, 224);
+    transform: scale(1.1);
+    transition: 0.8s;
 }
 
-a:active {
-    color: blueviolet;
+.card {
+    position: relative;
+    height: 348px;
+    width: 250px;
+    margin: 5px;
+    perspective: 1000px;
+}
+
+.flip {
+    position: relative;
+    text-align: center;
+    transition: 0.8s;
+    transform-style: preserve-3d;
+}
+
+.front-card, .back-card {
+    position: absolute;
+    backface-visibility: hidden;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.front-card:hover {
+    background-color: rgb(184, 141, 224);
+    transform: scale(1.1);
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.card:active .flip:active{
+    transform: rotateY(180deg);
+    transition: 0.8s;
+}
+
+.back-card {
+    transform: rotateY(180deg);
+    height: 25vh;
+    width: 25vh;
+    cursor: pointer;
+    background-color: rgb(184, 141, 224);
 }
 
 @media screen and (max-device-width: 800px) {
     main{
-        display: grid;
-        height: 110vh;
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+    }
+    .card {
+        margin: 20px;
     }
 }
+
